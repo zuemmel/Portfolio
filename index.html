@@ -15,8 +15,14 @@
 </head>
 
 <body>
+    <nav class="top-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#about">About</a>
+        <a class="nav-link" href="#work">Stuff I made</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <span class="nav-dot" aria-hidden="true"></span>
+    </nav>
     <div class="box"></div>
-    <div class="scroll-indicator">↓</div>
+    <div class="scroll-indicator">v</div>
 
     <header class="headliner">
         <h1>Malte Schrenk</h1>
@@ -24,46 +30,82 @@
     </header>
 
     <main>
-        <img class="hero-img" src="6E0D20AF-79F3-4D46-B801-9B73711D1D72.JPG" alt="Portrait of Malte Schrenk">
+        <img class="hero-img" src="portfolioimage1.png" alt="Portrait of Malte Schrenk">
 
-        <section class="about-section">
-            <h2 class="subHeadline">About</h2>
+        <section id="about" class="about-section page-section">
+            <div class="about-layout">
+                <div class="about-content">
+                    <h2 class="subHeadline">About</h2>
+                    <div class="subtext">
+                        A little bit about myself.
+                    </div>
 
-            <div class="text">
-                <p>
-                    My name is Malte Schrenk, I am 22 years old and live in Berlin. I am currently an undergraduate student at HTW Berlin studying International Media Informatics.
-                </p>
+                    <div class="text">
+                        <p>
+                            My name is Malte Schrenk, I am 22 years old and live in Berlin. I am currently an undergraduate student at HTW Berlin studying International Media Informatics.
+                        </p>
 
-                <p>
-                    After I completed my A-levels in 2021, I successfully started and finished an apprenticeship as a product photographer at Imagenium Fotografie in Berlin, where I also worked for 1 1/2 years.
-                </p>
+                        <p>
+                            After I completed my A-levels in 2021, I successfully started and finished an apprenticeship as a product photographer at Imagenium Fotografie in Berlin, where I also worked for 1 1/2 years.
+                        </p>
 
-                <p>
-                    I have always been passionate about media, technology, and creative digital workflows. Over the years, I have gained practical experience with a wide range of tools and software, including Adobe Photoshop, Adobe Bridge, FL Studio, and Visual Studio Code.
-                </p>
+                        <p>
+                            I have always been passionate about media, technology, and creative digital workflows. Over the years, I have gained practical experience with a wide range of tools and software, including Adobe Photoshop, Adobe Bridge, FL Studio, and Visual Studio Code.
+                        </p>
+                    </div>
+                </div>
+
+                <img class="subimg" src="portfolioimage2.png" alt="Another Portrait of Malte Schrenk">
+
             </div>
         </section>
+
+        <section id="work" class="work-section page-section">
+
+    <br>
+    <hr class="line">
+    <br>
+    <section id="stuff-made"></section>
+    <h2 class="subHeadline">Stuff I made</h2>
+        <div class="subtext">
+            A selection of projects I have been working on so far.
+        </div>
+
+        <section class="category-buttons" aria-label="Portfolio categories">
+            <a class="button" href="projects.html">
+                <i data-lucide="folder"></i>
+                <h3>Projects</h3>
+                <p>Websites and coding projects.</p>
+                <span class="arrow">→</span>
+            </a>
+
+            <a class="button">
+                <i data-lucide="camera"></i>
+                <h3>Photography</h3>
+                <p>Selected photography and editing work.</p>
+                <span class="arrow">→</span>
+            </a>
+
+            <a class="button">
+                <i data-lucide="sparkles"></i>
+                <h3>Playground</h3>
+                <p>All the other stuff I made.</p>
+                <span class="arrow">→</span>
+            </a>
+        </section>
+        
+        <br>
         <hr class="line">
         <br>
-        <h2 class="subHeadline">Stuff I made</h2>
-        <section class="category-buttons" aria-label="Portfolio categories">
-            <div class="button">
-                <i data-lucide="folder"></i>
-                <span>Projects</span>
-            </div>
 
-            <div class="button">
-                <i data-lucide="camera"></i>
-                <span>Photography</span>
-            </div>
-
-            <div class="button">
-                <i data-lucide="sparkles"></i>
-                <span>Playground</span>
+        <section id="contact" class="contact-section page-section">
+            <h2 class="subHeadline">Get in touch</h2>
+            <div class="subtext">
+                If you like what you see, please get in touch.
             </div>
         </section>
-    </main>
 
+    </main>
     <script>
         lucide.createIcons();
     </script>
