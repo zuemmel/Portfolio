@@ -61,42 +61,187 @@
         </section>
 
         <section id="work" class="work-section page-section">
+            <hr class="line">
+            <div id="stuff-made" class="work-heading">
+                <h2 class="subHeadline">Stuff I made</h2>
+                <div class="subtext">
+                    A growing collection of selected projects, experiments and visual work.
+                </div>
+            </div>
 
-    <br>
-    <hr class="line">
-    <br>
-    <section id="stuff-made"></section>
-    <h2 class="subHeadline">Stuff I made</h2>
-        <div class="subtext">
-            A selection of projects I have been working on so far.
-        </div>
+            <!--
+                Add new panels by copying one article.
+                data-importance controls the square size: featured uses 4x4 cells,
+                standard and compact use 3x3 cells, micro uses 2x2.
+                --project-image is the panel background. Separate gallery images in
+                data-images with a | character. Matching per-image descriptions
+                use data-captions in the same order. Optional links use data-link
+                and data-link-label.
+            -->
+            <div class="project-grid" aria-label="Selected projects">
+                <article class="project-panel project-panel--violet" data-importance="featured" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Rain Mixer" data-category="Website · Creative Coding"
+                    data-images="Projektfotos/rm1.gif|Projektfotos/rm2.png"
+                    data-captions="Animated overview of the rain mixer interface.|The mixer controls for combining different ambient sound layers."
+                    data-link="https://zuemmel.github.io/Rainmixer/"
+                    data-link-label="Try it yourself"
+                    style="--project-image: url('Projektfotos/rm3.jpg')"
+                    data-detail="An ambient rain mixing website with animated weather effects, layered audio and a glass-inspired interface. Built as an experiment in atmosphere, interaction and sound on the web.">
+                    <div class="project-panel__content">
+                        <p class="project-panel__meta">Website · Creative Coding</p>
+                        <h3>Rain Mixer</h3>
+                    </div>
+                    <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
+                </article>
 
-        <section class="category-buttons" aria-label="Portfolio categories">
-            <a class="button" href="projects.html">
-                <i data-lucide="folder"></i>
-                <h3>Projects</h3>
-                <p>Websites and coding projects.</p>
-                <span class="arrow">→</span>
-            </a>
+                <article class="project-panel project-panel--blue" data-importance="standard" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Godot Bowling Game" data-category="Game Development"
+                    data-images="Projektfotos/bowling2.gif|Projektfotos/bowling3.png"
+                    data-captions="The bowling prototype running in Godot.|A closer look at the scene, physics objects and environment."
+                    style="--project-image: url('Projektfotos/bowling2.gif')"
+                    data-detail="A small Demo I created to learn about the basics of Godot, 3D Physics and basic scripting.">
+                    <div class="project-panel__content">
+                        <p class="project-panel__meta">Game Development</p>
+                        <h3>Bowling Game</h3>
+                    </div>
+                    <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
+                </article>
 
-            <a class="button">
-                <i data-lucide="camera"></i>
-                <h3>Photography</h3>
-                <p>Selected photography and editing work.</p>
-                <span class="arrow">→</span>
-            </a>
+                <article class="project-panel project-panel--rose" data-importance="standard" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Photography" data-category="Photography"
+                    data-images="projektfotos/foto1.jpg|projektfotos/foto2.jpg"
+                    data-captions="Selected product photography from my professional work.|A second example showing a different lighting and retouching approach."
+                    style="--project-image: url('projektfotos/foto1.jpg')"
+                    data-detail="A collection of Photos I created during my time as Apprentice and full-time product photographer.">
+                    <div class="project-panel__content">
+                        <p class="project-panel__meta">Photography</p>
+                        <h3>Selected Photography</h3>
+                    </div>
+                    <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
+                </article>
 
-            <a class="button">
-                <i data-lucide="sparkles"></i>
-                <h3>Playground</h3>
-                <p>All the other stuff I made.</p>
-                <span class="arrow">→</span>
-            </a>
+                <article class="project-panel project-panel--blue" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Sound Study" data-category="Audio Experiment"
+                    data-images="portfolioimage2.png|portfolioimage1.jpeg"
+                    style="--project-image: url('portfolioimage2.png')"
+                    data-detail="A short experimental study combining field recordings, layered textures and a minimal visual interface.">
+                    <div class="project-panel__content">
+                        <p class="project-panel__meta">Audio</p>
+                        <h3>Sound Study</h3>
+                    </div>
+                    <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
+                </article>
+
+                <article class="project-panel project-panel--warm" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Poster Series" data-category="Graphic Design"
+                    data-images="portfolioimage1 Kopie.jpeg|portfolioimage2.png"
+                    style="--project-image: url('portfolioimage1 Kopie.jpeg')"
+                    data-detail="A small poster series exploring bold typography, cropped photography and limited color palettes.">
+                    <div class="project-panel__content">
+                        <p class="project-panel__meta">Design</p>
+                        <h3>Poster Series</h3>
+                    </div>
+                    <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
+                </article>
+
+                <article class="project-panel project-panel--violet" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Small Blender Projects" data-category="Motion Design"
+                    data-images="Projektfotos/blender1.jpg|Projektfotos/blender2.jpg"
+                    data-captions="A glass cup study focused on modelling, materials and lighting.|A second Blender exercise created while learning the basic workflow."
+                    style="--project-image: url('Projektfotos/blender1.jpg')"
+                    data-detail="2 little projects I created following YouTube Tutorials to learn the basics of modelling, texturing and lightning in Blender.">
+                    <div class="project-panel__content">
+                        <p class="project-panel__meta">Motion</p>
+                        <h3>Small Blender Projects</h3>
+                    </div>
+                    <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
+                </article>
+
+                <article class="project-panel project-panel--rose" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Mac Clock Widget" data-category="Coding"
+                    data-images="projektfotos/pixelwidget2.gif|6E0D20AF-79F3-4D46-B801-9B73711D1D72.JPG"
+                    style="--project-image: url('projektfotos/pixelwidget1.png')"
+                    data-detail="A small Project I created mainly because I wanted a custom Clock that isnt the standard Mac widget.">
+                    <div class="project-panel__content">
+                        <p class="project-panel__meta">Photo</p>
+                        <h3>Mac Clock Widget</h3>
+                    </div>
+                    <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
+                </article>
+
+                <article class="project-panel project-panel--warm" data-importance="compact" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Photography" data-category="Photography · Retouching"
+                    data-images="Projektfotos/wd1.png|Projektfotos/wd2.png|Projektfotos/wd3.png"
+                    style="--project-image: url('Projektfotos/wd3.png')"
+                    data-detail="A selection of product photography, portraits and image editing work created during my apprenticeship and independent projects.">
+                    <div class="project-panel__content">
+                        <p class="project-panel__meta">HTML, CSS, JavaScript</p>
+                        <h3>Early Webdesign Project</h3>
+                    </div>
+                    <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
+                </article>
+
+                <article class="project-panel project-panel--blue" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Shader Lab" data-category="Creative Coding"
+                    data-images="portfolioimage2.png|6E0D20AF-79F3-4D46-B801-9B73711D1D72.JPG"
+                    style="--project-image: url('portfolioimage2.png')"
+                    data-detail="Small real-time visual experiments with color, noise and procedural movement.">
+                    <div class="project-panel__content"><p class="project-panel__meta">Code</p><h3>Shader Lab</h3></div>
+                    <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
+                </article>
+
+                <article class="project-panel project-panel--violet" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Type Sketch" data-category="Typography"
+                    data-images="portfolioimage1 Kopie.jpeg|portfolioimage1.png"
+                    style="--project-image: url('portfolioimage1 Kopie.jpeg')"
+                    data-detail="A quick typographic study exploring scale, spacing and expressive letterforms.">
+                    <div class="project-panel__content"><p class="project-panel__meta">Type</p><h3>Type Sketch</h3></div>
+                    <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
+                </article>
+
+                <article class="project-panel project-panel--rose" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Color Tool" data-category="Interface Experiment"
+                    data-images="6E0D20AF-79F3-4D46-B801-9B73711D1D72.JPG|portfolioimage2.png"
+                    style="--project-image: url('6E0D20AF-79F3-4D46-B801-9B73711D1D72.JPG')"
+                    data-detail="A compact interface experiment for generating and comparing color combinations.">
+                    <div class="project-panel__content"><p class="project-panel__meta">UI</p><h3>Color Tool</h3></div>
+                    <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
+                </article>
+            </div>
         </section>
-        
-        <br>
+
+        <dialog class="project-dialog" aria-labelledby="dialog-title">
+            <div class="project-dialog__toolbar">
+                <span>Project preview</span>
+                <button class="project-dialog__close" type="button" aria-label="Close project details">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="project-gallery">
+                <img class="project-gallery__image" src="" alt="">
+                <button class="project-gallery__button project-gallery__button--previous" type="button" aria-label="Previous image">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+                <button class="project-gallery__button project-gallery__button--next" type="button" aria-label="Next image">
+                    <i data-lucide="chevron-right"></i>
+                </button>
+                <span class="project-gallery__counter" aria-live="polite"></span>
+            </div>
+            <p class="project-gallery__caption" aria-live="polite" hidden></p>
+            <p class="project-dialog__meta"></p>
+            <h2 id="dialog-title"></h2>
+            <p class="project-dialog__description"></p>
+            <a class="project-dialog__link" href="#" target="_blank" rel="noopener noreferrer" hidden>
+                <span>View project</span>
+                <i data-lucide="arrow-up-right"></i>
+            </a>
+            <div class="project-dialog__footer">
+                <span>Project details</span>
+                <span class="project-dialog__mark">MS — 2026</span>
+            </div>
+        </dialog>
+
         <hr class="line">
-        <br>
 
         <section id="contact" class="contact-section page-section">
             <h2 class="subHeadline">Get in touch</h2>

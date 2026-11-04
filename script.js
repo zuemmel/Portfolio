@@ -2,6 +2,22 @@ const headliner = document.querySelector('.headliner');
 const nav = document.querySelector('.top-nav');
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('.page-section');
+const projectPanels = document.querySelectorAll('.project-panel');
+const projectDialog = document.querySelector('.project-dialog');
+const dialogClose = document.querySelector('.project-dialog__close');
+const dialogTitle = document.querySelector('#dialog-title');
+const dialogMeta = document.querySelector('.project-dialog__meta');
+const dialogDescription = document.querySelector('.project-dialog__description');
+const dialogLink = document.querySelector('.project-dialog__link');
+const dialogLinkLabel = document.querySelector('.project-dialog__link span');
+const galleryImage = document.querySelector('.project-gallery__image');
+const galleryPrevious = document.querySelector('.project-gallery__button--previous');
+const galleryNext = document.querySelector('.project-gallery__button--next');
+const galleryCounter = document.querySelector('.project-gallery__counter');
+const galleryCaption = document.querySelector('.project-gallery__caption');
+let galleryImages = [];
+let galleryCaptions = [];
+let galleryIndex = 0;
 
 function moveNavDot(activeLink){
     if(!nav || !activeLink) return;
@@ -58,6 +74,79 @@ function updatePage(){
     updateHeadliner();
     updateActiveSection();
 }
+
+function updateGallery(){
+    if(!galleryImage || galleryImages.length === 0) return;
+
+    galleryImage.src = galleryImages[galleryIndex];
+    galleryImage.alt = `${dialogTitle.textContent} — image ${galleryIndex + 1}`;
+    galleryImage.parentElement.style.setProperty(
+        '--gallery-image',
+        `url(${JSON.stringify(galleryImages[galleryIndex])})`
+    );
+    galleryCounter.textContent = `${galleryIndex + 1} / ${galleryImages.length}`;
+
+    const caption = galleryCaptions[galleryIndex]?.trim() || '';
+    galleryCaption.textContent = caption;
+    galleryCaption.hidden = !caption;
+
+    const hasMultipleImages = galleryImages.length > 1;
+    galleryPrevious.hidden = !hasMultipleImages;
+    galleryNext.hidden = !hasMultipleImages;
+}
+
+function changeGalleryImage(direction){
+    if(galleryImages.length < 2) return;
+
+    galleryIndex = (galleryIndex + direction + galleryImages.length) % galleryImages.length;
+    updateGallery();
+}
+
+function openProject(panel){
+    if(!projectDialog || !panel) return;
+
+    dialogTitle.textContent = panel.dataset.title || '';
+    dialogMeta.textContent = panel.dataset.category || '';
+    dialogDescription.textContent = panel.dataset.detail || '';
+
+    if(panel.dataset.link){
+        dialogLink.href = panel.dataset.link;
+        dialogLinkLabel.textContent = panel.dataset.linkLabel || 'View project';
+        dialogLink.hidden = false;
+    } else {
+        dialogLink.removeAttribute('href');
+        dialogLink.hidden = true;
+    }
+
+    galleryImages = (panel.dataset.images || '').split('|').filter(Boolean);
+    galleryCaptions = (panel.dataset.captions || '').split('|');
+    galleryIndex = 0;
+    updateGallery();
+    projectDialog.showModal();
+}
+
+projectPanels.forEach(panel => {
+    panel.addEventListener('click', () => openProject(panel));
+    panel.addEventListener('keydown', event => {
+        if(event.key === 'Enter' || event.key === ' '){
+            event.preventDefault();
+            openProject(panel);
+        }
+    });
+});
+
+dialogClose?.addEventListener('click', () => projectDialog.close());
+galleryPrevious?.addEventListener('click', () => changeGalleryImage(-1));
+galleryNext?.addEventListener('click', () => changeGalleryImage(1));
+
+projectDialog?.addEventListener('keydown', event => {
+    if(event.key === 'ArrowLeft') changeGalleryImage(-1);
+    if(event.key === 'ArrowRight') changeGalleryImage(1);
+});
+
+projectDialog?.addEventListener('click', event => {
+    if(event.target === projectDialog) projectDialog.close();
+});
 
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
