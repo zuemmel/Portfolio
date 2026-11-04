@@ -57,17 +57,19 @@ function updateActiveSection(){
 function updateHeadliner(){
     if(!headliner) return;
 
-    const progress = Math.min(window.scrollY / 180, 1);
+    const animationDistance = Math.max(420, window.innerHeight * 0.78);
+    const rawProgress = Math.min(window.scrollY / animationDistance, 1);
+    const progress = rawProgress * rawProgress * (3 - 2 * rawProgress);
     const moveY = progress * -18;
     const scale = 1 - progress * 0.7;
 
     headliner.style.transform =
         `translateY(calc(-50% + ${moveY}vh)) scale(${scale})`;
 
-    headliner.classList.toggle('scrolled', progress > 0.55);
+    headliner.classList.toggle('scrolled', progress > 0.28);
 
-    document.documentElement.style.setProperty('--imageOpacity', 1 - progress);
-    document.documentElement.style.setProperty('--arrowOpacity', 1 - progress * 4);
+    document.documentElement.style.setProperty('--imageOpacity', Math.max(0, 1 - progress * 1.05));
+    document.documentElement.style.setProperty('--arrowOpacity', Math.max(0, 1 - rawProgress * 5));
 }
 
 function updatePage(){

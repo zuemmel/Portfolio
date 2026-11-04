@@ -7,7 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="portfoliostylesheet.css">
 
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -55,7 +55,7 @@
                     </div>
                 </div>
 
-                <img class="subimg" src="portfolioimage2.png" alt="Another Portrait of Malte Schrenk">
+                <img class="subimg" src="portfolioimage2.png" alt="Another Portrait of Malte Schrenk" style="z-index: 999;">
 
             </div>
         </section>
@@ -73,52 +73,59 @@
                 Add new panels by copying one article.
                 data-importance controls the square size: featured uses 4x4 cells,
                 standard and compact use 3x3 cells, micro uses 2x2.
-                --project-image is the panel background. Separate gallery images in
+                The project-image CSS variable sets the panel background. Separate gallery images in
                 data-images with a | character. Matching per-image descriptions
                 use data-captions in the same order. Optional links use data-link
                 and data-link-label.
             -->
             <div class="project-grid" aria-label="Selected projects">
+                <!-- USER PROJECT START: Rain Mixer -->
                 <article class="project-panel project-panel--violet" data-importance="featured" tabindex="0" role="button" aria-haspopup="dialog"
-                    data-title="Rain Mixer" data-category="Website · Creative Coding"
+                    data-title="Rain Mixer" data-category="Website, Creative Coding"
                     data-images="Projektfotos/rm1.gif|Projektfotos/rm2.png"
                     data-captions="Animated overview of the rain mixer interface.|The mixer controls for combining different ambient sound layers."
                     data-link="https://zuemmel.github.io/Rainmixer/"
                     data-link-label="Try it yourself"
                     style="--project-image: url('Projektfotos/rm3.jpg')"
-                    data-detail="An ambient rain mixing website with animated weather effects, layered audio and a glass-inspired interface. Built as an experiment in atmosphere, interaction and sound on the web.">
+                    data-detail="RainMixer is a web project I created to mix different rain and ambient sounds into personalized soundscapes. I added animated weather effects and a glass-inspired interface to create a relaxing atmosphere.
+                                The project was developed with the help of AI and gave me the opportunity to experiment with web design, animations, and audio playback in the browser.">
                     <div class="project-panel__content">
-                        <p class="project-panel__meta">Website · Creative Coding</p>
+                        <p class="project-panel__meta">Website, Creative Coding</p>
                         <h3>Rain Mixer</h3>
                     </div>
                     <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
                 </article>
+                <!-- USER PROJECT END: Rain Mixer -->
 
+                <!-- USER PROJECT START: Godot Bowling Game -->
                 <article class="project-panel project-panel--blue" data-importance="standard" tabindex="0" role="button" aria-haspopup="dialog"
                     data-title="Godot Bowling Game" data-category="Game Development"
                     data-images="Projektfotos/bowling2.gif|Projektfotos/bowling3.png"
                     data-captions="The bowling prototype running in Godot.|A closer look at the scene, physics objects and environment."
                     style="--project-image: url('Projektfotos/bowling2.gif')"
-                    data-detail="A small Demo I created to learn about the basics of Godot, 3D Physics and basic scripting.">
+                    data-detail="A small bowling game I created to get familiar with the basics of Godot, 3D physics, and GDScript. The project helped me understand how physics-based interactions work in a game engine and gave me some hands-on experience with basic game development.">
                     <div class="project-panel__content">
                         <p class="project-panel__meta">Game Development</p>
                         <h3>Bowling Game</h3>
                     </div>
                     <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
                 </article>
+                <!-- USER PROJECT END: Godot Bowling Game -->
 
+                <!-- USER PROJECT START: Selected Photography -->
                 <article class="project-panel project-panel--rose" data-importance="standard" tabindex="0" role="button" aria-haspopup="dialog"
                     data-title="Photography" data-category="Photography"
                     data-images="projektfotos/foto1.jpg|projektfotos/foto2.jpg"
                     data-captions="Selected product photography from my professional work.|A second example showing a different lighting and retouching approach."
                     style="--project-image: url('projektfotos/foto1.jpg')"
-                    data-detail="A collection of Photos I created during my time as Apprentice and full-time product photographer.">
+                    data-detail="A collection of photographs I took during my apprenticeship and my time working as a full-time product photographer. The selection showcases some of my work and the experience I gained in product photography, lighting, and image editing.">
                     <div class="project-panel__content">
                         <p class="project-panel__meta">Photography</p>
                         <h3>Selected Photography</h3>
                     </div>
                     <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
                 </article>
+                <!-- USER PROJECT END: Selected Photography -->
 
                 <article class="project-panel project-panel--blue" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
                     data-title="Sound Study" data-category="Audio Experiment"
@@ -144,42 +151,51 @@
                     <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
                 </article>
 
+                <!-- USER PROJECT START: Small Blender Projects -->
                 <article class="project-panel project-panel--violet" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
                     data-title="Small Blender Projects" data-category="Motion Design"
                     data-images="Projektfotos/blender1.jpg|Projektfotos/blender2.jpg"
                     data-captions="A glass cup study focused on modelling, materials and lighting.|A second Blender exercise created while learning the basic workflow."
                     style="--project-image: url('Projektfotos/blender1.jpg')"
-                    data-detail="2 little projects I created following YouTube Tutorials to learn the basics of modelling, texturing and lightning in Blender.">
+                    data-detail="Two small projects I created by following YouTube tutorials to get familiar with Blender. I used them to learn the basics of 3D modeling, texturing, materials, and lighting, while gaining some first experience with rendering.">
                     <div class="project-panel__content">
                         <p class="project-panel__meta">Motion</p>
                         <h3>Small Blender Projects</h3>
                     </div>
                     <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
                 </article>
+                <!-- USER PROJECT END: Small Blender Projects -->
 
+                <!-- USER PROJECT START: Mac Clock Widget -->
                 <article class="project-panel project-panel--rose" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
                     data-title="Mac Clock Widget" data-category="Coding"
-                    data-images="projektfotos/pixelwidget2.gif|6E0D20AF-79F3-4D46-B801-9B73711D1D72.JPG"
+                    data-images="projektfotos/pixelwidget2.gif"
                     style="--project-image: url('projektfotos/pixelwidget1.png')"
-                    data-detail="A small Project I created mainly because I wanted a custom Clock that isnt the standard Mac widget.">
+                    data-detail="A small project I started because I wanted a custom desktop clock instead of the standard macOS widget. I used AI assistance to help with most of the coding and focused mainly on customizing the design and functionality to my preferences.">
                     <div class="project-panel__content">
                         <p class="project-panel__meta">Photo</p>
                         <h3>Mac Clock Widget</h3>
                     </div>
                     <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
                 </article>
+                <!-- USER PROJECT END: Mac Clock Widget -->
 
+                <!-- USER PROJECT START: Early Webdesign Project -->
                 <article class="project-panel project-panel--warm" data-importance="compact" tabindex="0" role="button" aria-haspopup="dialog"
                     data-title="Photography" data-category="Photography · Retouching"
                     data-images="Projektfotos/wd1.png|Projektfotos/wd2.png|Projektfotos/wd3.png"
+                    data-captions="Basic HTML Website, with little Design.|Added CSS for custom Buttons, Background, Fonts and Colors.|Added Javasript Integration to include a search Bar."
                     style="--project-image: url('Projektfotos/wd3.png')"
-                    data-detail="A selection of product photography, portraits and image editing work created during my apprenticeship and independent projects.">
+                    data-detail="One of my first web development projects, which I used to learn the basics of HTML, CSS, and JavaScript. I started with a simple HTML page, gradually added styling with CSS, and later introduced interactive elements using JavaScript.
+
+Looking back at the different versions shows how my understanding of web development developed over time.">
                     <div class="project-panel__content">
                         <p class="project-panel__meta">HTML, CSS, JavaScript</p>
                         <h3>Early Webdesign Project</h3>
                     </div>
                     <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
                 </article>
+                <!-- USER PROJECT END: Early Webdesign Project -->
 
                 <article class="project-panel project-panel--blue" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
                     data-title="Shader Lab" data-category="Creative Coding"
@@ -211,43 +227,75 @@
         </section>
 
         <dialog class="project-dialog" aria-labelledby="dialog-title">
-            <div class="project-dialog__toolbar">
-                <span>Project preview</span>
-                <button class="project-dialog__close" type="button" aria-label="Close project details">
-                    <i data-lucide="x"></i>
-                </button>
-            </div>
-            <div class="project-gallery">
-                <img class="project-gallery__image" src="" alt="">
-                <button class="project-gallery__button project-gallery__button--previous" type="button" aria-label="Previous image">
-                    <i data-lucide="chevron-left"></i>
-                </button>
-                <button class="project-gallery__button project-gallery__button--next" type="button" aria-label="Next image">
-                    <i data-lucide="chevron-right"></i>
-                </button>
-                <span class="project-gallery__counter" aria-live="polite"></span>
-            </div>
-            <p class="project-gallery__caption" aria-live="polite" hidden></p>
-            <p class="project-dialog__meta"></p>
-            <h2 id="dialog-title"></h2>
-            <p class="project-dialog__description"></p>
-            <a class="project-dialog__link" href="#" target="_blank" rel="noopener noreferrer" hidden>
-                <span>View project</span>
-                <i data-lucide="arrow-up-right"></i>
-            </a>
-            <div class="project-dialog__footer">
-                <span>Project details</span>
-                <span class="project-dialog__mark">MS — 2026</span>
+            <button class="project-dialog__close" type="button" aria-label="Close project details">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="project-dialog__scroll">
+                <div class="project-gallery">
+                    <img class="project-gallery__image" src="" alt="">
+                    <button class="project-gallery__button project-gallery__button--previous" type="button" aria-label="Previous image">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+                    <button class="project-gallery__button project-gallery__button--next" type="button" aria-label="Next image">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+                    <span class="project-gallery__counter" aria-live="polite"></span>
+                </div>
+                <p class="project-gallery__caption" aria-live="polite" hidden></p>
+                <p class="project-dialog__meta"></p>
+                <h2 id="dialog-title"></h2>
+                <p class="project-dialog__description"></p>
+                <a class="project-dialog__link" href="#" target="_blank" rel="noopener noreferrer" hidden>
+                    <span>View project</span>
+                    <i data-lucide="arrow-up-right"></i>
+                </a>
+                <div class="project-dialog__footer">
+                    <span>Project details</span>
+                    <span class="project-dialog__mark">MS — 2026</span>
+                </div>
             </div>
         </dialog>
 
-        <hr class="line">
-
         <section id="contact" class="contact-section page-section">
-            <h2 class="subHeadline">Get in touch</h2>
-            <div class="subtext">
-                If you like what you see, please get in touch.
-            </div>
+            <footer class="contact-footer">
+                <div class="contact-footer__intro">
+                    <h2>Get in touch</h2>
+                    <p>For projects, collaborations or just to say hello.</p>
+                </div>
+
+                <div class="contact-footer__details">
+                    <!-- Replace the following email address and phone number. -->
+                    <a href="mailto:your.email@example.com">
+                        <small>Email</small>
+                        <span>your.email@example.com</span>
+                    </a>
+                    <a href="tel:+491234567890">
+                        <small>Phone</small>
+                        <span>+49 123 4567890</span>
+                    </a>
+                    <div>
+                        <small>Based in</small>
+                        <span>Berlin, Germany</span>
+                    </div>
+                </div>
+
+                <div class="contact-footer__socials">
+                    <a href="https://github.com/zuemmel" target="_blank" rel="noopener noreferrer">
+                        <i data-lucide="github"></i>
+                        GitHub
+                    </a>
+                    <!-- Replace the placeholder URL with your LinkedIn profile. -->
+                    <a href="https://www.linkedin.com/in/your-profile/" target="_blank" rel="noopener noreferrer">
+                        <i data-lucide="linkedin"></i>
+                        LinkedIn
+                    </a>
+                </div>
+
+                <div class="contact-footer__bottom">
+                    <span>Malte Schrenk</span>
+                    <span>Portfolio — 2026</span>
+                </div>
+            </footer>
         </section>
 
     </main>
