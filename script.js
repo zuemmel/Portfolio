@@ -50,6 +50,12 @@ function updateActiveSection(){
         }
     });
 
+    const isAtPageBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+
+    if(isAtPageBottom && sections.length > 0){
+        currentId = sections[sections.length - 1].id;
+    }
+
     setActiveNav(currentId);
 }
 
