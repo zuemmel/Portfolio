@@ -1,4 +1,3 @@
-const headliner = document.querySelector('.headliner');
 const nav = document.querySelector('.top-nav');
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('.page-section');
@@ -54,26 +53,13 @@ function updateActiveSection(){
     setActiveNav(currentId);
 }
 
-function updateHeadliner(){
-    if(!headliner) return;
-
-    const animationDistance = Math.max(420, window.innerHeight * 0.78);
-    const rawProgress = Math.min(window.scrollY / animationDistance, 1);
-    const progress = rawProgress * rawProgress * (3 - 2 * rawProgress);
-    const moveY = progress * -19;
-    const scale = 1 - progress * 0.7;
-
-    headliner.style.transform =
-        `translateY(calc(-50% + ${moveY}vh)) scale(${scale})`;
-
-    headliner.classList.toggle('scrolled', progress > 0.28);
-
-    document.documentElement.style.setProperty('--imageOpacity', Math.max(0, 1 - progress * 1.05));
-    document.documentElement.style.setProperty('--arrowOpacity', Math.max(0, 1 - rawProgress * 5));
-}
-
 function updatePage(){
-    updateHeadliner();
+    const animationDistance = Math.max(420, window.innerHeight * 0.82);
+    const rawProgress = Math.min(window.scrollY / animationDistance, 1);
+
+    document.documentElement.style.setProperty('--imageOpacity', Math.max(0, 1 - rawProgress * 1.05));
+    document.documentElement.style.setProperty('--arrowOpacity', Math.max(0, 1 - rawProgress * 5));
+
     updateActiveSection();
 }
 
@@ -160,10 +146,9 @@ navLinks.forEach(link => {
 window.addEventListener('scroll', updatePage);
 
 window.addEventListener('resize', () => {
-    moveNavDot(document.querySelector('.nav-link.active'));
-});
-
-window.addEventListener('DOMContentLoaded', () => {
     updatePage();
     moveNavDot(document.querySelector('.nav-link.active'));
 });
+
+updatePage();
+moveNavDot(document.querySelector('.nav-link.active'));

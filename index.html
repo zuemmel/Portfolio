@@ -10,6 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="portfoliostylesheet.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geo:ital@0;1&display=swap" rel="stylesheet">
+
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="script.js" defer></script>
 </head>
@@ -21,21 +25,22 @@
         <a class="nav-link" href="#contact">Contact</a>
         <span class="nav-dot" aria-hidden="true"></span>
     </nav>
-    <div class="box"></div>
     <div class="scroll-indicator">v</div>
 
-    <header class="headliner">
-        <h1>Malte Schrenk</h1>
-        <h2>Portfolio</h2>
-    </header>
+    <div class="hero-stage">
+        <header class="headliner">
+            <h1 class="geo-regular"><span class="fancy">Malte Schrenk</span></h1>
+            <h2 class="geo-regular">Portfolio</h2>
+        </header>
+
+        <img class="hero-img" src="portfolioimage1.png" alt="Portrait of Malte Schrenk">
+    </div>
 
     <main>
-        <img class="hero-img" src="portfolioimage1.png" alt="Portrait of Malte Schrenk">
-
         <section id="about" class="about-section page-section">
             <div class="about-layout">
                 <div class="about-content">
-                    <h2 class="subHeadline">About</h2>
+                    <h2 class="subHeadline geo-regular">About</h2>
                     <div class="subtext">
                         A little bit about myself.
                     </div>
@@ -63,7 +68,7 @@
         <section id="work" class="work-section page-section">
             <hr class="line">
             <div id="stuff-made" class="work-heading">
-                <h2 class="subHeadline">Stuff I made</h2>
+                <h2 class="subHeadline geo-regular">Stuff I made</h2>
                 <div class="subtext">
                     A growing collection of selected projects, experiments and visual work.
                 </div>
@@ -259,7 +264,7 @@ Looking back at the different versions shows how my understanding of web develop
         <section id="contact" class="contact-section page-section">
             <footer class="contact-footer">
                 <div class="contact-footer__intro">
-                    <h2>Get in touch</h2>
+                    <h2 class="geo-regular">Get in touch</h2>
                     <p>For projects, collaborations or just to say hello.</p>
                 </div>
 
