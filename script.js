@@ -60,7 +60,7 @@ function updateHeadliner(){
     const animationDistance = Math.max(420, window.innerHeight * 0.78);
     const rawProgress = Math.min(window.scrollY / animationDistance, 1);
     const progress = rawProgress * rawProgress * (3 - 2 * rawProgress);
-    const moveY = progress * -18;
+    const moveY = progress * -19;
     const scale = 1 - progress * 0.7;
 
     headliner.style.transform =
@@ -149,6 +149,7 @@ projectDialog?.addEventListener('keydown', event => {
 projectDialog?.addEventListener('click', event => {
     if(event.target === projectDialog) projectDialog.close();
 });
+
 
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
