@@ -2007,3 +2007,9 @@ h2{
         transition: none;
     }
 }
+
+
+/* DEBUG MODE */
+* {
+    outline: 1px solid red;
+}
