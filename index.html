@@ -7,12 +7,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geo:ital@0;1&amp;family=Inter:wght@100;200;300;400;500;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="portfoliostylesheet.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geo:ital@0;1&display=swap" rel="stylesheet">
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="script.js" defer></script>
@@ -33,7 +29,7 @@
             <h2 class="geo-regular">Portfolio</h2>
         </header>
 
-        <img class="hero-img" src="portfolioimage1.png" alt="Portrait of Malte Schrenk">
+        <img class="hero-img" src="Projektbilder/malte-portrait-sunset.jpg" alt="Portrait of Malte Schrenk" fetchpriority="high" decoding="async">
     </div>
 
     <main>
@@ -60,7 +56,7 @@
                     </div>
                 </div>
 
-                <img class="subimg" src="portfolioimage2.png" alt="Another Portrait of Malte Schrenk" style="z-index: 999;">
+                <img class="subimg" src="Projektbilder/malte-portrait-studio.jpg" alt="Another Portrait of Malte Schrenk" loading="lazy" decoding="async" style="z-index: 999;">
 
             </div>
         </section>
@@ -84,148 +80,164 @@
                 and data-link-label.
             -->
             <div class="project-grid" aria-label="Selected projects">
-                <!-- USER PROJECT START: Rain Mixer -->
-                <article class="project-panel project-panel--violet" data-importance="featured" tabindex="0" role="button" aria-haspopup="dialog"
-                    data-title="Rain Mixer" data-category="Website, Creative Coding"
-                    data-images="Projektfotos/rm1.gif|Projektfotos/rm2.png"
+                <div class="background-decor" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <!--Rain Mixer-->
+                <article class="project-panel project-panel--violet" data-importance="featured" data-edge="left" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Rain Mixer" data-category="HTML, CSS, JavaScript"
+                    data-images="Projektbilder/rm1.gif|Projektbilder/rm2.jpg"
                     data-captions="Animated overview of the rain mixer interface.|The mixer controls for combining different ambient sound layers."
                     data-link="https://zuemmel.github.io/Rainmixer/"
                     data-link-label="Try it yourself"
-                    style="--project-image: url('Projektfotos/rm3.jpg')"
+                    data-project-image="Projektbilder/rm3.jpg"
                     data-detail="RainMixer is a web project I created to mix different rain and ambient sounds into personalized soundscapes. I added animated weather effects and a glass-inspired interface to create a relaxing atmosphere.
                                 The project was developed with the help of AI and gave me the opportunity to experiment with web design, animations, and audio playback in the browser.">
                     <div class="project-panel__content">
-                        <p class="project-panel__meta">Website, Creative Coding</p>
+                        <p class="project-panel__meta">HTML, CSS, JavaScript</p>
                         <h3>Rain Mixer</h3>
                     </div>
                     <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
                 </article>
-                <!-- USER PROJECT END: Rain Mixer -->
 
-                <!-- USER PROJECT START: Godot Bowling Game -->
-                <article class="project-panel project-panel--blue" data-importance="standard" tabindex="0" role="button" aria-haspopup="dialog"
-                    data-title="Godot Bowling Game" data-category="Game Development"
-                    data-images="Projektfotos/bowling2.gif|Projektfotos/bowling3.png"
-                    data-captions="The bowling prototype running in Godot.|A closer look at the scene, physics objects and environment."
-                    style="--project-image: url('Projektfotos/bowling2.gif')"
-                    data-detail="A small bowling game I created to get familiar with the basics of Godot, 3D physics, and GDScript. The project helped me understand how physics-based interactions work in a game engine and gave me some hands-on experience with basic game development. By pressing the Forward key a Bar goes up and down and you have to release at the right moment to send the ball off with maximum velocity">
-                    <div class="project-panel__content">
-                        <p class="project-panel__meta">Game Development</p>
-                        <h3>Bowling Game</h3>
-                    </div>
-                    <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
-                </article>
-                <!-- USER PROJECT END: Godot Bowling Game -->
-
-                <!-- USER PROJECT START: Selected Photography -->
-                <article class="project-panel project-panel--rose" data-importance="standard" tabindex="0" role="button" aria-haspopup="dialog"
-                    data-title="Photography" data-category="Photography"
-                    data-images="Projektfotos/foto1.jpg|Projektfotos/foto2.jpg|Projektfotos/foto3.jpg|Projektfotos/foto4.jpg|Projektfotos/foto5.jpg|Projektfotos/foto6.png|Projektfotos/foto7.png"
-                    data-captions="A picture for my final examination portfolio. A mix of photography and mockup design.|A bottle I photographed for a project during my apprenticeship.|Shoes photographed for my portfolio. The main challenge was making the shoes appear to float in mid-air and positioning the laces.|Toothbrush photographed for my portfolio.|A mood shot of an Apple Watch.|Photographs from my final examination project.|Photographs from my final examination project."
-                    style="--project-image: url('Projektfotos/foto1.jpg')"
-                    data-detail="A collection of photographs I took during my apprenticeship and my time working as a full-time product photographer. The selection showcases some of my work and the experience I gained in product photography, lighting, and image editing.">
-                    <div class="project-panel__content">
-                        <p class="project-panel__meta">Photography</p>
-                        <h3>Selected Photography</h3>
-                    </div>
-                    <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
-                </article>
-                <!-- USER PROJECT END: Selected Photography -->
-
-                <article class="project-panel project-panel--blue" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
-                    data-title="Sound Study" data-category="Audio Experiment"
-                    data-images="portfolioimage2.png|portfolioimage1.jpeg"
-                    style="--project-image: url('portfolioimage2.png')"
-                    data-detail="A short experimental study combining field recordings, layered textures and a minimal visual interface.">
-                    <div class="project-panel__content">
-                        <p class="project-panel__meta">Audio</p>
-                        <h3>Sound Study</h3>
-                    </div>
-                    <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
-                </article>
-
+                <!--Java Programming-->
                 <article class="project-panel project-panel--warm" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
-                    data-title="Poster Series" data-category="Graphic Design"
-                    data-images="portfolioimage1 Kopie.jpeg|portfolioimage2.png"
-                    style="--project-image: url('portfolioimage1 Kopie.jpeg')"
-                    data-detail="A small poster series exploring bold typography, cropped photography and limited color palettes.">
+                    data-title="Java Programming" data-category="Java, IntelliJ IDEA"
+                    data-images="Projektbilder/java-programming.jpg"
+                    data-captions="Java exercises focused on recursion and binary tree structures."
+                    data-project-image="Projektbilder/java-programming.jpg"
+                    data-detail="Java is a central part of my International Media Informatics studies. Through practical exercises and coursework, I use it to develop a deeper understanding of object-oriented programming, algorithms, data structures, and structured problem-solving.">
                     <div class="project-panel__content">
-                        <p class="project-panel__meta">Design</p>
-                        <h3>Poster Series</h3>
+                        <p class="project-panel__meta">Java, IntelliJ IDEA</p>
+                        <h3>Java Programming</h3>
                     </div>
                     <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
                 </article>
 
-                <!-- USER PROJECT START: Small Blender Projects -->
-                <article class="project-panel project-panel--violet" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
-                    data-title="Small Blender Projects" data-category="Motion Design"
-                    data-images="Projektfotos/blender1.jpg|Projektfotos/blender2.jpg"
-                    data-captions="A glass cup study focused on modelling, materials and lighting.|A second Blender exercise created while learning the basic workflow."
-                    style="--project-image: url('Projektfotos/blender1.jpg')"
+                <!--Blender-->
+                <article class="project-panel project-panel--violet" data-importance="standard" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Small Blender Projects" data-category="Blender"
+                    data-images="Projektbilder/blender1.jpg|Projektbilder/blender3.jpg|Projektbilder/blender2.jpg|Projektbilder/blender4.jpg"
+                    data-captions="A glass cup study focused on modelling, materials and lighting.|A second Blender exercise created while learning the basic workflow.|Added Texture and Sprinkles.|Both Objects together and added Water to the glass."
+                    data-project-image="Projektbilder/blender1.jpg"
                     data-detail="Two small projects I created by following YouTube tutorials to get familiar with Blender. I used them to learn the basics of 3D modeling, texturing, materials, and lighting, while gaining some first experience with rendering.">
                     <div class="project-panel__content">
-                        <p class="project-panel__meta">Motion</p>
+                        <p class="project-panel__meta">Blender</p>
                         <h3>Small Blender Projects</h3>
                     </div>
                     <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
                 </article>
-                <!-- USER PROJECT END: Small Blender Projects -->
 
-                <!-- USER PROJECT START: Mac Clock Widget -->
+                <!--Godot-->
+                <article class="project-panel project-panel--blue" data-importance="standard" data-edge="right" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Bowling Game" data-category="Godot, GDScript"
+                    data-images="Projektbilder/bowling2.gif|Projektbilder/bowling3.jpg"
+                    data-captions="The bowling prototype running in Godot.|A closer look at the scene, physics objects and environment."
+                    data-project-image="Projektbilder/bowling2.gif"
+                    data-detail="A small bowling game I created to get familiar with the basics of Godot, 3D physics, and GDScript. The project helped me understand how physics-based interactions work in a game engine and gave me some hands-on experience with basic game development. By pressing the Forward key a Bar goes up and down and you have to release at the right moment to send the ball off with maximum velocity">
+                    <div class="project-panel__content">
+                        <p class="project-panel__meta">Godot, GDScript</p>
+                        <h3>Bowling Game</h3>
+                    </div>
+                    <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
+                </article>
+
+                <!--Maya-->
+                <article class="project-panel project-panel--warm" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="First Maya modelling attempts" data-category="Maya"
+                    data-images="Projektbilder/Maya2.jpg|Projektbilder/Maya3.jpg"
+                    data-captions="Shampoo Bottle using a reference Image.|Cup."
+                    data-project-image="Projektbilder/Maya1.jpg"
+                    data-detail="Two very simple Projects created in Maya during studies at HTW.">
+                    <div class="project-panel__content">
+                        <p class="project-panel__meta">Maya</p>
+                        <h3>First Maya modelling attempts</h3>
+                    </div>
+                    <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
+                </article>
+
+                <!--Music Production-->
+                <article class="project-panel project-panel--blue" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Music Production" data-category="FL Studio"
+                    data-images="Projektbilder/music-production.jpg"
+                    data-audio="Musik/song-01.mp3|Musik/song-02.mp3|Musik/song-03.mp3|Musik/song-04.mp3"
+                    data-audio-titles="Oceans - zml|Song 02|Song 03|Song 04"
+                    data-project-image="Projektbilder/music-production.jpg"
+                    data-detail="A selection of music and audio experiments. The tracks can be played directly in the project overview.">
+                    <div class="project-panel__content">
+                        <p class="project-panel__meta">FL Studio</p>
+                        <h3>Music Production</h3>
+                    </div>
+                    <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
+                </article>
+
+                <!--Mac Clock Widget-->
                 <article class="project-panel project-panel--rose" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
-                    data-title="Mac Clock Widget" data-category="Coding"
-                    data-images="Projektfotos/pixelwidget2.gif"
-                    style="--project-image: url('Projektfotos/pixelwidget1.png')"
+                    data-title="Mac Clock Widget" data-category="Swift, SwiftUI"
+                    data-images="Projektbilder/pixelwidget2.gif"
+                    data-project-image="Projektbilder/pixelwidget1.jpg"
                     data-detail="A small project I started because I wanted a custom desktop clock instead of the standard macOS widget. I used AI assistance to help with most of the coding and focused mainly on customizing the design and functionality to my preferences.">
                     <div class="project-panel__content">
-                        <p class="project-panel__meta">Photo</p>
+                        <p class="project-panel__meta">Swift, SwiftUI</p>
                         <h3>Mac Clock Widget</h3>
                     </div>
                     <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
                 </article>
-                <!-- USER PROJECT END: Mac Clock Widget -->
 
-                <!-- USER PROJECT START: Early Webdesign Project -->
-                <article class="project-panel project-panel--warm" data-importance="compact" tabindex="0" role="button" aria-haspopup="dialog"
-                    data-title="Photography" data-category="Photography · Retouching"
-                    data-images="Projektfotos/wd1.png|Projektfotos/wd2.png|Projektfotos/wd3.png"
-                    data-captions="Basic HTML Website, with little Design.|Added CSS for custom Buttons, Background, Fonts and Colors.|Added Javasript Integration to include a search Bar."
-                    style="--project-image: url('Projektfotos/wd3.png')"
-                    data-detail="One of my first web development projects, which I used to learn the basics of HTML, CSS, and JavaScript. I started with a simple HTML page, gradually added styling with CSS, and later introduced interactive elements using JavaScript.
-
-Looking back at the different versions shows how my understanding of web development developed over time.">
+                <!--Photography-->
+                <article class="project-panel project-panel--rose" data-importance="standard" data-edge="left" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Selected Photography" data-category="Adobe Photoshop"
+                    data-images="Projektbilder/foto1.jpg|Projektbilder/foto2.jpg|Projektbilder/foto3.jpg|Projektbilder/foto4.jpg|Projektbilder/foto5.jpg|Projektbilder/foto6.jpg|Projektbilder/foto7.jpg"
+                    data-captions="A picture for my final examination portfolio. A mix of photography and mockup design.|A bottle I photographed for a project during my apprenticeship.|Shoes photographed for my portfolio. The main challenge was making the shoes appear to float in mid-air and positioning the laces.|Toothbrush photographed for my portfolio.|A mood shot of an Apple Watch.|Photographs from my final examination project.|Photographs from my final examination project."
+                    data-project-image="Projektbilder/foto1.jpg"
+                    data-detail="A collection of photographs I took during my apprenticeship and my time working as a full-time product photographer. The selection showcases some of my work and the experience I gained in product photography, lighting, and image editing.">
                     <div class="project-panel__content">
-                        <p class="project-panel__meta">HTML, CSS, JavaScript</p>
-                        <h3>Early Webdesign Project</h3>
+                        <p class="project-panel__meta">Adobe Photoshop</p>
+                        <h3>Selected Photography</h3>
                     </div>
                     <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
                 </article>
-                <!-- USER PROJECT END: Early Webdesign Project -->
 
-                <article class="project-panel project-panel--blue" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
-                    data-title="Shader Lab" data-category="Creative Coding"
-                    data-images="portfolioimage2.png|6E0D20AF-79F3-4D46-B801-9B73711D1D72.JPG"
-                    style="--project-image: url('portfolioimage2.png')"
-                    data-detail="Small real-time visual experiments with color, noise and procedural movement.">
-                    <div class="project-panel__content"><p class="project-panel__meta">Code</p><h3>Shader Lab</h3></div>
+                <!--Early Web Design Project-->
+                <article class="project-panel project-panel--warm" data-importance="micro" data-edge="right" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Early Web Design Project" data-category="HTML, CSS, JavaScript"
+                    data-images="Projektbilder/wd1.jpg|Projektbilder/wd2.jpg|Projektbilder/wd3.jpg"
+                    data-captions="Basic HTML website with minimal design.|Added CSS for custom buttons, backgrounds, fonts and colors.|Added JavaScript integration to include a search bar."
+                    data-project-image="Projektbilder/wd3.jpg"
+                    data-detail="One of my first web development projects, which I used to learn the basics of HTML, CSS, and JavaScript. I started with a simple HTML page, gradually added styling with CSS, and later introduced interactive elements using JavaScript.
+                    Looking back at the different versions shows how my understanding of web development developed over time.">
+                    <div class="project-panel__content">
+                        <p class="project-panel__meta">HTML, CSS, JavaScript</p>
+                        <h3>Early Web Design Project</h3>
+                    </div>
                     <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
                 </article>
 
                 <article class="project-panel project-panel--violet" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
-                    data-title="Type Sketch" data-category="Typography"
-                    data-images="portfolioimage1 Kopie.jpeg|portfolioimage1.png"
-                    style="--project-image: url('portfolioimage1 Kopie.jpeg')"
+                    data-title="Type Sketch" data-category="Adobe Illustrator"
+                    data-images="Projektbilder/malte-portrait-sunset.jpg"
+                    data-project-image="Projektbilder/malte-portrait-sunset.jpg"
                     data-detail="A quick typographic study exploring scale, spacing and expressive letterforms.">
-                    <div class="project-panel__content"><p class="project-panel__meta">Type</p><h3>Type Sketch</h3></div>
+                    <div class="project-panel__content"><p class="project-panel__meta">Adobe Illustrator</p><h3>Type Sketch</h3></div>
                     <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
                 </article>
 
-                <article class="project-panel project-panel--rose" data-importance="micro" tabindex="0" role="button" aria-haspopup="dialog"
-                    data-title="Color Tool" data-category="Interface Experiment"
-                    data-images="6E0D20AF-79F3-4D46-B801-9B73711D1D72.JPG|portfolioimage2.png"
-                    style="--project-image: url('6E0D20AF-79F3-4D46-B801-9B73711D1D72.JPG')"
+                <article class="project-panel project-panel--rose" data-importance="micro" data-edge="right" tabindex="0" role="button" aria-haspopup="dialog"
+                    data-title="Color Tool" data-category="HTML, CSS, JavaScript"
+                    data-images="Projektbilder/color-tool.jpg|Projektbilder/malte-portrait-studio.jpg"
+                    data-project-image="Projektbilder/color-tool.jpg"
                     data-detail="A compact interface experiment for generating and comparing color combinations.">
-                    <div class="project-panel__content"><p class="project-panel__meta">UI</p><h3>Color Tool</h3></div>
+                    <div class="project-panel__content"><p class="project-panel__meta">HTML, CSS, JavaScript</p><h3>Color Tool</h3></div>
                     <span class="project-panel__open" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
                 </article>
             </div>
@@ -237,7 +249,7 @@ Looking back at the different versions shows how my understanding of web develop
             </button>
             <div class="project-dialog__scroll">
                 <div class="project-gallery">
-                    <img class="project-gallery__image" src="" alt="">
+                    <img class="project-gallery__image" src="" alt="" decoding="async">
                     <button class="project-gallery__button project-gallery__button--previous" type="button" aria-label="Previous image">
                         <i data-lucide="chevron-left"></i>
                     </button>
@@ -250,6 +262,7 @@ Looking back at the different versions shows how my understanding of web develop
                 <p class="project-dialog__meta"></p>
                 <h2 id="dialog-title"></h2>
                 <p class="project-dialog__description"></p>
+                <div class="project-dialog__audio" aria-label="Audio tracks" hidden></div>
                 <a class="project-dialog__link" href="#" target="_blank" rel="noopener noreferrer" hidden>
                     <span>View project</span>
                     <i data-lucide="arrow-up-right"></i>

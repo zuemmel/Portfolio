@@ -7,6 +7,7 @@ const dialogClose = document.querySelector('.project-dialog__close');
 const dialogTitle = document.querySelector('#dialog-title');
 const dialogMeta = document.querySelector('.project-dialog__meta');
 const dialogDescription = document.querySelector('.project-dialog__description');
+const dialogAudio = document.querySelector('.project-dialog__audio');
 const dialogLink = document.querySelector('.project-dialog__link');
 const dialogLinkLabel = document.querySelector('.project-dialog__link span');
 const galleryImage = document.querySelector('.project-gallery__image');
@@ -17,6 +18,29 @@ const galleryCaption = document.querySelector('.project-gallery__caption');
 let galleryImages = [];
 let galleryCaptions = [];
 let galleryIndex = 0;
+let pageUpdateQueued = false;
+
+function loadProjectImage(panel){
+    const image = panel.dataset.projectImage;
+    if(!image) return;
+
+    panel.style.setProperty('--project-image', `url(${JSON.stringify(image)})`);
+}
+
+if('IntersectionObserver' in window){
+    const projectImageObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(!entry.isIntersecting) return;
+
+            loadProjectImage(entry.target);
+            projectImageObserver.unobserve(entry.target);
+        });
+    }, { rootMargin: '400px 0px' });
+
+    projectPanels.forEach(panel => projectImageObserver.observe(panel));
+} else {
+    projectPanels.forEach(loadProjectImage);
+}
 
 function moveNavDot(activeLink){
     if(!nav || !activeLink) return;
@@ -65,8 +89,17 @@ function updatePage(){
 
     document.documentElement.style.setProperty('--imageOpacity', Math.max(0, 1 - rawProgress * 1.05));
     document.documentElement.style.setProperty('--arrowOpacity', Math.max(0, 1 - rawProgress * 5));
-
     updateActiveSection();
+}
+
+function requestPageUpdate(){
+    if(pageUpdateQueued) return;
+
+    pageUpdateQueued = true;
+    window.requestAnimationFrame(() => {
+        updatePage();
+        pageUpdateQueued = false;
+    });
 }
 
 function updateGallery(){
@@ -102,6 +135,33 @@ function openProject(panel){
     dialogTitle.textContent = panel.dataset.title || '';
     dialogMeta.textContent = panel.dataset.category || '';
     dialogDescription.textContent = panel.dataset.detail || '';
+
+    if(dialogAudio){
+        dialogAudio.replaceChildren();
+
+        const audioFiles = (panel.dataset.audio || '').split('|').filter(Boolean);
+        const audioTitles = (panel.dataset.audioTitles || '').split('|');
+
+        audioFiles.forEach((file, index) => {
+            const track = document.createElement('div');
+            track.className = 'audio-track';
+
+            const title = document.createElement('span');
+            title.className = 'audio-track__title';
+            title.textContent = audioTitles[index]?.trim() || `Track ${index + 1}`;
+
+            const player = document.createElement('audio');
+            player.controls = true;
+            player.preload = 'metadata';
+            player.src = file;
+            player.setAttribute('aria-label', title.textContent);
+
+            track.append(title, player);
+            dialogAudio.append(track);
+        });
+
+        dialogAudio.hidden = audioFiles.length === 0;
+    }
 
     if(panel.dataset.link){
         dialogLink.href = panel.dataset.link;
@@ -142,6 +202,13 @@ projectDialog?.addEventListener('click', event => {
     if(event.target === projectDialog) projectDialog.close();
 });
 
+projectDialog?.addEventListener('close', () => {
+    dialogAudio?.querySelectorAll('audio').forEach(player => {
+        player.pause();
+        player.currentTime = 0;
+    });
+});
+
 
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -149,7 +216,7 @@ navLinks.forEach(link => {
     });
 });
 
-window.addEventListener('scroll', updatePage);
+window.addEventListener('scroll', requestPageUpdate, { passive: true });
 
 window.addEventListener('resize', () => {
     updatePage();
